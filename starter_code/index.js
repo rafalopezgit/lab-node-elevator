@@ -1,16 +1,29 @@
 const Elevator = require('./elevator.js');
+const Person = require('./person.js');
 
 
-let myElevator = new Elevator();
+let elevator = new Elevator();
 
+let person1 = new Person(Mary, 1, 3);
+let person2 = new Person(John, 4, 1);
+let person3 = new Person(Peter, 1, 9);
 
-for (let p = myElevator.floor; p < myElevator.MAXFLOOR; p++ ) {
-  myElevator.floorUp();
-  myElevator.log()
+//El elevador sube
+/*
+for (let p = elevator.floor; p < elevator.MAXFLOOR; p++ ) {
+  elevator.floorUp();
+  elevator.log()
 };
+*/
 
-
-for (let p = myElevator.floor; p > 0; p--) {
-  myElevator.floorDown();
-  myElevator.log()
+//El elevador baja
+/*
+for (let p = elevator.floor; p > 0; p--) {
+  elevator.floorDown();
+  elevator.log()
 };
+*/
+
+elevator.call(person1)
+elevator.call(person2)
+elevator.call(person3)

@@ -4,7 +4,8 @@ class Elevator {
     this.MAXFLOOR   = 10;
     this.requests   = [];
     this.direction = "up";
-    this.movement;
+    this.waitingList = [];
+    this.passengers = [];
 
   }
 
@@ -32,10 +33,18 @@ class Elevator {
       this.floor--
     }
   }
-  call(person) { this.request.push(person)}
+
+  call(person, originFloor) {
+    this.waitingList.push(person)
+    this.requests.push(originFloor)
+  }
 
   log() {
     console.log(`Direction: ${this.direction} | Floor: ${this.floor}`);
+  }
+
+  movement(){
+    
   }
 }
 
